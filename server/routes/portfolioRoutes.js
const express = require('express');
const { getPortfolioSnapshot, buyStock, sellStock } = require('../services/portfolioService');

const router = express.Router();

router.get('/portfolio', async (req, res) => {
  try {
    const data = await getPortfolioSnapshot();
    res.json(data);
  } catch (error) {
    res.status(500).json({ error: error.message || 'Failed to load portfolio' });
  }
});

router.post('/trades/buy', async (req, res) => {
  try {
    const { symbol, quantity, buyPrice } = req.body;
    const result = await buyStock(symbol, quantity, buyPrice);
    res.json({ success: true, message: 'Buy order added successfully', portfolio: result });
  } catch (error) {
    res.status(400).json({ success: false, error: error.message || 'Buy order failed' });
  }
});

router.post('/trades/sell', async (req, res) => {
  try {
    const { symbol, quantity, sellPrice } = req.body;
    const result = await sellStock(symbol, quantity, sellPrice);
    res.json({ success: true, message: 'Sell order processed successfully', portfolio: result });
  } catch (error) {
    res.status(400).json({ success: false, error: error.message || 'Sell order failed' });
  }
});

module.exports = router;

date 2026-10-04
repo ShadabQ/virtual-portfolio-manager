@@ -1,0 +1,159 @@
+const { v4: uuidv4 } = require('uuid');
+const { getQuery, allQuery, runQuery } = require('../db');
+const { getLatestQuote } = require('../services/marketDataService');
+
+function round(value) {
+  return Number(Number(value).toFixed(2));
+}
+
+async function getPortfolioSnapshot() {
+  const portfolio = await getQuery(`SELECT * FROM portfolios WHERE id = 'default'`);
+  if (!portfolio) {
+    throw new Error('Portfolio not found');
+  }
+
+  const holdings = await allQuery(`SELECT * FROM holdings WHERE portfolio_id = 'default' ORDER BY symbol ASC`);
+
+  const enrichedHoldings = [];
+  let totalInvested = 0;
+  let totalMarketValue = 0;
+  let totalUnrealized = 0;
+
+  for (const holding of holdings) {
+    const ltp = await getLatestQuote(holding.symbol);
+    const investedValue = round(holding.avg_buy_price * holding.quantity);
+    const marketValue = round(ltp * holding.quantity);
+    const pnl = round(marketValue - investedValue);
+
+    totalInvested += investedValue;
+    totalMarketValue += marketValue;
+    totalUnrealized += pnl;
+
+    enrichedHoldings.push({
+      id: holding.id,
+      symbol: holding.symbol,
+      quantity: holding.quantity,
+      avgBuyPrice: round(holding.avg_buy_price),
+      ltp: round(ltp),
+      investedValue,
+      marketValue,
+      pnl,
+      percentChange: holding.avg_buy_price > 0 ? round(((ltp - holding.avg_buy_price) / holding.avg_buy_price) * 100) : 0,
+    });
+  }
+
+  return {
+    cashBalance: round(portfolio.cash_balance),
+    realizedPnl: round(portfolio.realized_pnl),
+    totalInvested: round(totalInvested),
+    totalMarketValue: round(totalMarketValue),
+    totalPnl: round(totalUnrealized + portfolio.realized_pnl),
+    totalBalance: round(portfolio.cash_balance + totalMarketValue),
+    holdings: enrichedHoldings,
+  };
+}
+
+async function buyStock(symbol, quantity, buyPrice) {
+  const qty = Number(quantity);
+  const price = Number(buyPrice);
+
+  if (!symbol || qty <= 0 || price <= 0) {
+    throw new Error('Invalid trade input');
+  }
+
+  const portfolio = await getQuery(`SELECT * FROM portfolios WHERE id = 'default'`);
+  const tradeCost = qty * price;
+
+  if (portfolio.cash_balance < tradeCost) {
+    throw new Error('Not enough virtual cash for this transaction');
+  }
+
+  const existingHolding = await getQuery(
+    `SELECT * FROM holdings WHERE portfolio_id = 'default' AND symbol = ?`,
+    [symbol]
+  );
+
+  if (existingHolding) {
+    const totalQty = existingHolding.quantity + qty;
+    const weightedAverage = ((existingHolding.avg_buy_price * existingHolding.quantity) + tradeCost) / totalQty;
+
+    await runQuery(
+      `UPDATE holdings SET quantity = ?, avg_buy_price = ?, updated_at = datetime('now') WHERE id = ?`,
+      [totalQty, weightedAverage, existingHolding.id]
+    );
+  } else {
+    await runQuery(
+      `INSERT INTO holdings (id, portfolio_id, symbol, quantity, avg_buy_price, created_at, updated_at)
+       VALUES (?, 'default', ?, ?, ?, datetime('now'), datetime('now'))`,
+      [uuidv4(), symbol, qty, price]
+    );
+  }
+
+  await runQuery(
+    `UPDATE portfolios SET cash_balance = cash_balance - ? WHERE id = 'default'`,
+    [tradeCost]
+  );
+
+  await runQuery(
+    `INSERT INTO trades (id, portfolio_id, symbol, type, quantity, price, total_value, created_at)
+     VALUES (?, 'default', ?, 'BUY', ?, ?, ?, datetime('now'))`,
+    [uuidv4(), symbol, qty, price, tradeCost]
+  );
+
+  return await getPortfolioSnapshot();
+}
+
+async function sellStock(symbol, quantity, sellPrice) {
+  const qty = Number(quantity);
+  const price = Number(sellPrice);
+
+  if (!symbol || qty <= 0 || price <= 0) {
+    throw new Error('Invalid sell input');
+  }
+
+  const holding = await getQuery(
+    `SELECT * FROM holdings WHERE portfolio_id = 'default' AND symbol = ?`,
+    [symbol]
+  );
+
+  if (!holding) {
+    throw new Error('Stock not found in portfolio');
+  }
+
+  if (holding.quantity < qty) {
+    throw new Error('You cannot sell more than the available quantity');
+  }
+
+  const proceeds = qty * price;
+  const realizedGain = (price - holding.avg_buy_price) * qty;
+
+  const remainingQty = holding.quantity - qty;
+
+  if (remainingQty === 0) {
+    await runQuery(`DELETE FROM holdings WHERE id = ?`, [holding.id]);
+  } else {
+    await runQuery(
+      `UPDATE holdings SET quantity = ?, updated_at = datetime('now') WHERE id = ?`,
+      [remainingQty, holding.id]
+    );
+  }
+
+  await runQuery(
+    `UPDATE portfolios SET cash_balance = cash_balance + ?, realized_pnl = realized_pnl + ? WHERE id = 'default'`,
+    [proceeds, realizedGain]
+  );
+
+  await runQuery(
+    `INSERT INTO trades (id, portfolio_id, symbol, type, quantity, price, total_value, created_at)
+     VALUES (?, 'default', ?, 'SELL', ?, ?, ?, datetime('now'))`,
+    [uuidv4(), symbol, qty, price, proceeds]
+  );
+
+  return await getPortfolioSnapshot();
+}
+
+module.exports = {
+  getPortfolioSnapshot,
+  buyStock,
+  sellStock,
+};

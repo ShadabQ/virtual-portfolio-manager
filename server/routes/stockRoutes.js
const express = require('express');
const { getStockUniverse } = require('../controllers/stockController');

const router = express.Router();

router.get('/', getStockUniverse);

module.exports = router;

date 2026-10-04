@@ -1,0 +1,12 @@
+const { allQuery } = require('../db');
+
+async function getStockUniverse(req, res) {
+  try {
+    const stocks = await allQuery(`SELECT symbol, company_name AS name, sector, exchange FROM stock_master ORDER BY company_name ASC`);
+    res.json(stocks);
+  } catch (error) {
+    res.status(500).json({ error: 'Unable to fetch NSE stock universe' });
+  }
+}
+
+module.exports = { getStockUniverse };
