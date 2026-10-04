@@ -1,2 +1,5 @@
-# virtual-portfolio-manager
-A virtual trading portfolio management system for NSE stocks with real-time PNL tracking
+node_modules
+npm-debug.log*
+.DS_Store
+.env
+coverage

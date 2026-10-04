@@ -1,0 +1,150 @@
+const summaryGrid = document.getElementById('summaryGrid');
+const portfolioTableBody = document.getElementById('portfolioTableBody');
+const buyForm = document.getElementById('buyForm');
+const sellForm = document.getElementById('sellForm');
+const buySymbol = document.getElementById('buySymbol');
+const sellSymbol = document.getElementById('sellSymbol');
+const refreshBtn = document.getElementById('refreshBtn');
+
+let portfolioSummary = null;
+
+function formatCurrency(value) {
+  return new Intl.NumberFormat('en-IN', {
+    style: 'currency',
+    currency: 'INR',
+    maximumFractionDigits: 2,
+  }).format(Number(value || 0));
+}
+
+function formatPercent(value) {
+  return `${Number(value || 0).toFixed(2)}%`;
+}
+
+function formatQty(value) {
+  return Number(value || 0).toLocaleString('en-IN');
+}
+
+function renderSummary(summary) {
+  const cards = [
+    { label: 'Cash balance', value: formatCurrency(summary.cashBalance) },
+    { label: 'Invested value', value: formatCurrency(summary.totalInvested) },
+    { label: 'Market value', value: formatCurrency(summary.totalMarketValue) },
+    { label: 'Net P&L', value: formatCurrency(summary.totalPnl), extra: summary.totalPnl >= 0 ? 'Positive' : 'Negative' },
+  ];
+
+  summaryGrid.innerHTML = cards
+    .map(
+      (card) => `
+        <div class="summary-card">
+          <span class="summary-label">${card.label}</span>
+          <div class="summary-value">${card.value}</div>
+          ${card.extra ? `<div class="summary-trend">${card.extra}</div>` : ''}
+        </div>
+      `
+    )
+    .join('');
+}
+
+function renderHoldings(holdings) {
+  if (!holdings || holdings.length === 0) {
+    portfolioTableBody.innerHTML = `
+      <tr>
+        <td colspan="8">No positions yet. Add a stock from the NSE 500 universe to get started.</td>
+      </tr>
+    `;
+    return;
+  }
+
+  portfolioTableBody.innerHTML = holdings
+    .map((item) => {
+      const pnlClass = item.pnl >= 0 ? 'pnl-positive' : 'pnl-negative';
+      return `
+        <tr>
+          <td>${item.symbol}</td>
+          <td>${item.company}</td>
+          <td>${formatQty(item.qty)}</td>
+          <td>${formatCurrency(item.avgBuyPrice)}</td>
+          <td>${formatCurrency(item.ltp)}</td>
+          <td>${formatCurrency(item.investedValue)}</td>
+          <td>${formatCurrency(item.marketValue)}</td>
+          <td class="${pnlClass}">${formatCurrency(item.pnl)}</td>
+        </tr>
+      `;
+    })
+    .join('');
+}
+
+async function fetchPortfolio() {
+  const response = await fetch('/api/portfolio');
+  const data = await response.json();
+  portfolioSummary = data;
+  renderSummary(data);
+  renderHoldings(data.holdings);
+}
+
+async function loadStockUniverse() {
+  const response = await fetch('/api/stocks');
+  const data = await response.json();
+
+  const symbols = data.stocks || [];
+  const options = symbols
+    .map((stock) => `<option value="${stock.symbol}">${stock.symbol} - ${stock.name}</option>`)
+    .join('');
+
+  buySymbol.innerHTML = options;
+  sellSymbol.innerHTML = options;
+}
+
+buyForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  const payload = {
+    symbol: buySymbol.value,
+    qty: Number(document.getElementById('buyQty').value),
+    buyPrice: Number(document.getElementById('buyPrice').value),
+  };
+
+  const response = await fetch('/api/portfolio/buy', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+
+  const result = await response.json();
+  alert(result.message || result.error || 'Trade submitted');
+
+  if (response.ok) {
+    buyForm.reset();
+    fetchPortfolio();
+  }
+});
+
+sellForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  const payload = {
+    symbol: sellSymbol.value,
+    qty: Number(document.getElementById('sellQty').value),
+    sellPrice: Number(document.getElementById('sellPrice').value),
+  };
+
+  const response = await fetch('/api/portfolio/sell', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  });
+
+  const result = await response.json();
+  alert(result.message || result.error || 'Trade submitted');
+
+  if (response.ok) {
+    sellForm.reset();
+    fetchPortfolio();
+  }
+});
+
+refreshBtn.addEventListener('click', fetchPortfolio);
+
+loadStockUniverse();
+fetchPortfolio();
+setInterval(fetchPortfolio, 15000);
