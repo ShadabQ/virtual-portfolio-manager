@@ -2,12 +2,24 @@
   "name": "virtual-portfolio-manager",
   "version": "1.0.0",
   "description": "Virtual trading portfolio manager for NSE stocks with live P&L tracking",
-  "main": "server.js",
+  "main": "server/index.js",
   "scripts": {
-    "start": "node server.js"
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "nodemon server/index.js",
+    "client": "cd client && npm start",
+    "start": "node server/index.js",
+    "build": "cd client && npm run build"
   },
   "dependencies": {
+    "express": "^4.19.2",
+    "cors": "^2.8.5",
     "axios": "^1.7.7",
-    "express": "^4.19.2"
+    "dotenv": "^16.4.5",
+    "sqlite3": "^5.1.7",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0",
+    "concurrently": "^8.2.2"
   }
 }
