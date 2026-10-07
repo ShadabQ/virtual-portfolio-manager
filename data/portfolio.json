@@ -1,0 +1,11 @@
+{
+  "cashBalance": 985987.6,
+  "realizedPnl": 0,
+  "holdings": [
+    {
+      "symbol": "RELIANCE.NS",
+      "qty": 12,
+      "avgBuyPrice": 1167.7
+    }
+  ]
+}

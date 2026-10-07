@@ -1,0 +1,25 @@
+{
+  "name": "virtual-portfolio-manager",
+  "version": "1.0.0",
+  "description": "Virtual portfolio manager for paper-trading stocks on NSE",
+  "main": "server/index.js",
+  "scripts": {
+    "server": "node server.js",
+    "client": "node server.js",
+    "dev": "npm run server",
+    "start": "node server.js",
+    "build": "node server.js"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "sqlite3": "^5.1.7",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.0"
+  }
+}

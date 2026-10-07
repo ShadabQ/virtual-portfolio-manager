@@ -1,0 +1,230 @@
+import { useEffect, useState } from 'react';
+
+const API_BASE = 'http://localhost:5000/api';
+
+const currency = new Intl.NumberFormat('en-IN', {
+  style: 'currency',
+  currency: 'INR',
+  maximumFractionDigits: 2,
+});
+
+function App() {
+  const [portfolio, setPortfolio] = useState(null);
+  const [stocks, setStocks] = useState([]);
+  const [buyForm, setBuyForm] = useState({ symbol: 'RELIANCE.NS', quantity: 10, buyPrice: 2800 });
+  const [sellForm, setSellForm] = useState({ symbol: 'RELIANCE.NS', quantity: 1, sellPrice: 2850 });
+
+  async function fetchPortfolio() {
+    const res = await fetch(`${API_BASE}/portfolio`);
+    const data = await res.json();
+    setPortfolio(data);
+  }
+
+  async function fetchStocks() {
+    const res = await fetch(`${API_BASE}/stocks`);
+    const data = await res.json();
+    setStocks(data);
+    if (data.length > 0) {
+      setBuyForm((prev) => ({ ...prev, symbol: data[0].symbol }));
+      setSellForm((prev) => ({ ...prev, symbol: data[0].symbol }));
+    }
+  }
+
+  useEffect(() => {
+    fetchStocks();
+    fetchPortfolio();
+    const interval = setInterval(fetchPortfolio, 15000);
+    return () => clearInterval(interval);
+  }, []);
+
+  async function handleBuy(event) {
+    event.preventDefault();
+
+    const response = await fetch(`${API_BASE}/trades/buy`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        symbol: buyForm.symbol,
+        quantity: Number(buyForm.quantity),
+        buyPrice: Number(buyForm.buyPrice),
+      }),
+    });
+
+    const result = await response.json();
+    alert(result.success ? 'Buy order placed successfully' : result.error);
+    if (result.success) {
+      fetchPortfolio();
+      setBuyForm((prev) => ({ ...prev, quantity: 1 }));
+    }
+  }
+
+  async function handleSell(event) {
+    event.preventDefault();
+
+    const response = await fetch(`${API_BASE}/trades/sell`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        symbol: sellForm.symbol,
+        quantity: Number(sellForm.quantity),
+        sellPrice: Number(sellForm.sellPrice),
+      }),
+    });
+
+    const result = await response.json();
+    alert(result.success ? 'Sell order placed successfully' : result.error);
+    if (result.success) {
+      fetchPortfolio();
+      setSellForm((prev) => ({ ...prev, quantity: 1 }));
+    }
+  }
+
+  if (!portfolio) {
+    return <div className="loading">Loading portfolio...</div>;
+  }
+
+  return (
+    <div className="app-shell">
+      <header className="topbar">
+        <div>
+          <p className="eyebrow">Paper Trading</p>
+          <h1>Virtual Portfolio Manager</h1>
+        </div>
+        <button className="refresh-btn" onClick={fetchPortfolio}>Refresh</button>
+      </header>
+
+      <section className="summary-grid">
+        <div className="summary-card">
+          <span>Cash Balance</span>
+          <strong>{currency.format(portfolio.cashBalance)}</strong>
+        </div>
+        <div className="summary-card">
+          <span>Invested Value</span>
+          <strong>{currency.format(portfolio.totalInvested)}</strong>
+        </div>
+        <div className="summary-card">
+          <span>Market Value</span>
+          <strong>{currency.format(portfolio.totalMarketValue)}</strong>
+        </div>
+        <div className="summary-card highlight">
+          <span>Net P&L</span>
+          <strong>{currency.format(portfolio.totalPnl)}</strong>
+        </div>
+      </section>
+
+      <section className="trade-grid">
+        <form className="panel" onSubmit={handleBuy}>
+          <h2>Add Stock</h2>
+          <label>
+            Stock
+            <select value={buyForm.symbol} onChange={(e) => setBuyForm({ ...buyForm, symbol: e.target.value })}>
+              {stocks.map((stock) => (
+                <option key={stock.symbol} value={stock.symbol}>{stock.name}</option>
+              ))}
+            </select>
+          </label>
+
+          <div className="field-row">
+            <label>
+              Qty
+              <input
+                type="number"
+                min="1"
+                value={buyForm.quantity}
+                onChange={(e) => setBuyForm({ ...buyForm, quantity: e.target.value })}
+              />
+            </label>
+            <label>
+              Buy Price
+              <input
+                type="number"
+                min="0.01"
+                step="0.01"
+                value={buyForm.buyPrice}
+                onChange={(e) => setBuyForm({ ...buyForm, buyPrice: e.target.value })}
+              />
+            </label>
+          </div>
+
+          <button type="submit">Add to Portfolio</button>
+        </form>
+
+        <form className="panel" onSubmit={handleSell}>
+          <h2>Sell Stock</h2>
+          <label>
+            Stock
+            <select value={sellForm.symbol} onChange={(e) => setSellForm({ ...sellForm, symbol: e.target.value })}>
+              {stocks.map((stock) => (
+                <option key={stock.symbol} value={stock.symbol}>{stock.name}</option>
+              ))}
+            </select>
+          </label>
+
+          <div className="field-row">
+            <label>
+              Qty
+              <input
+                type="number"
+                min="1"
+                value={sellForm.quantity}
+                onChange={(e) => setSellForm({ ...sellForm, quantity: e.target.value })}
+              />
+            </label>
+            <label>
+              Sell Price
+              <input
+                type="number"
+                min="0.01"
+                step="0.01"
+                value={sellForm.sellPrice}
+                onChange={(e) => setSellForm({ ...sellForm, sellPrice: e.target.value })}
+              />
+            </label>
+          </div>
+
+          <button type="submit" className="sell-btn">Sell Position</button>
+        </form>
+      </section>
+
+      <section className="panel table-panel">
+        <h2>Portfolio Positions</h2>
+        <div className="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Symbol</th>
+                <th>Qty</th>
+                <th>Avg Buy</th>
+                <th>LTP</th>
+                <th>Invested</th>
+                <th>Market Value</th>
+                <th>P&L</th>
+              </tr>
+            </thead>
+            <tbody>
+              {portfolio.holdings.length === 0 ? (
+                <tr>
+                  <td colSpan="7">No holdings yet. Add a stock to begin paper trading.</td>
+                </tr>
+              ) : (
+                portfolio.holdings.map((holding) => (
+                  <tr key={holding.symbol}>
+                    <td>{holding.symbol}</td>
+                    <td>{holding.quantity}</td>
+                    <td>{currency.format(holding.avgBuyPrice)}</td>
+                    <td>{currency.format(holding.ltp)}</td>
+                    <td>{currency.format(holding.investedValue)}</td>
+                    <td>{currency.format(holding.marketValue)}</td>
+                    <td className={holding.pnl >= 0 ? 'positive' : 'negative'}>{currency.format(holding.pnl)}</td>
+                  </tr>
+                ))
+              )}
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+export default App;
