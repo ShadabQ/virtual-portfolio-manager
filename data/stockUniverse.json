@@ -1,22 +1,2002 @@
 [
-  { "symbol": "RELIANCE.NS", "name": "Reliance Industries" },
-  { "symbol": "TCS.NS", "name": "Tata Consultancy Services" },
-  { "symbol": "HDFCBANK.NS", "name": "HDFC Bank" },
-  { "symbol": "ICICIBANK.NS", "name": "ICICI Bank" },
-  { "symbol": "INFY.NS", "name": "Infosys" },
-  { "symbol": "ITC.NS", "name": "ITC" },
-  { "symbol": "SBIN.NS", "name": "State Bank of India" },
-  { "symbol": "LTIM.NS", "name": "LTIMindtree" },
-  { "symbol": "KOTAKBANK.NS", "name": "Kotak Mahindra Bank" },
-  { "symbol": "AXISBANK.NS", "name": "Axis Bank" },
-  { "symbol": "SUNPHARMA.NS", "name": "Sun Pharmaceutical" },
-  { "symbol": "MARUTI.NS", "name": "Maruti Suzuki" },
-  { "symbol": "BHARTIARTL.NS", "name": "Bharti Airtel" },
-  { "symbol": "TATAMOTORS.NS", "name": "Tata Motors" },
-  { "symbol": "NTPC.NS", "name": "NTPC" },
-  { "symbol": "ASIANPAINT.NS", "name": "Asian Paints" },
-  { "symbol": "ULTRACEMCO.NS", "name": "UltraTech Cement" },
-  { "symbol": "POWERGRID.NS", "name": "Power Grid" },
-  { "symbol": "INDUSINDBK.NS", "name": "IndusInd Bank" },
-  { "symbol": "WIPRO.NS", "name": "Wipro" }
+  {
+    "symbol": "360ONE.NS",
+    "name": "360ONE"
+  },
+  {
+    "symbol": "3MINDIA.NS",
+    "name": "3MINDIA"
+  },
+  {
+    "symbol": "AADHARHFC.NS",
+    "name": "AADHARHFC"
+  },
+  {
+    "symbol": "AARTIIND.NS",
+    "name": "AARTIIND"
+  },
+  {
+    "symbol": "AAVAS.NS",
+    "name": "AAVAS"
+  },
+  {
+    "symbol": "ABB.NS",
+    "name": "ABB"
+  },
+  {
+    "symbol": "ABBOTINDIA.NS",
+    "name": "ABBOTINDIA"
+  },
+  {
+    "symbol": "ABCAPITAL.NS",
+    "name": "ABCAPITAL"
+  },
+  {
+    "symbol": "ABDL.NS",
+    "name": "ABDL"
+  },
+  {
+    "symbol": "ABFRL.NS",
+    "name": "ABFRL"
+  },
+  {
+    "symbol": "ABLBL.NS",
+    "name": "ABLBL"
+  },
+  {
+    "symbol": "ABREL.NS",
+    "name": "ABREL"
+  },
+  {
+    "symbol": "ABSLAMC.NS",
+    "name": "ABSLAMC"
+  },
+  {
+    "symbol": "ACC.NS",
+    "name": "ACC"
+  },
+  {
+    "symbol": "ACE.NS",
+    "name": "ACE"
+  },
+  {
+    "symbol": "ACMESOLAR.NS",
+    "name": "ACMESOLAR"
+  },
+  {
+    "symbol": "ACUTAAS.NS",
+    "name": "ACUTAAS"
+  },
+  {
+    "symbol": "ADANIENSOL.NS",
+    "name": "ADANIENSOL"
+  },
+  {
+    "symbol": "ADANIENT.NS",
+    "name": "ADANIENT"
+  },
+  {
+    "symbol": "ADANIGREEN.NS",
+    "name": "ADANIGREEN"
+  },
+  {
+    "symbol": "ADANIPORTS.NS",
+    "name": "ADANIPORTS"
+  },
+  {
+    "symbol": "ADANIPOWER.NS",
+    "name": "ADANIPOWER"
+  },
+  {
+    "symbol": "AEGISLOG.NS",
+    "name": "AEGISLOG"
+  },
+  {
+    "symbol": "AEGISVOPAK.NS",
+    "name": "AEGISVOPAK"
+  },
+  {
+    "symbol": "AFCONS.NS",
+    "name": "AFCONS"
+  },
+  {
+    "symbol": "AFFLE.NS",
+    "name": "AFFLE"
+  },
+  {
+    "symbol": "AIAENG.NS",
+    "name": "AIAENG"
+  },
+  {
+    "symbol": "AIIL.NS",
+    "name": "AIIL"
+  },
+  {
+    "symbol": "AJANTPHARM.NS",
+    "name": "AJANTPHARM"
+  },
+  {
+    "symbol": "ALKEM.NS",
+    "name": "ALKEM"
+  },
+  {
+    "symbol": "AMBER.NS",
+    "name": "AMBER"
+  },
+  {
+    "symbol": "AMBUJACEM.NS",
+    "name": "AMBUJACEM"
+  },
+  {
+    "symbol": "ANANDRATHI.NS",
+    "name": "ANANDRATHI"
+  },
+  {
+    "symbol": "ANANTRAJ.NS",
+    "name": "ANANTRAJ"
+  },
+  {
+    "symbol": "ANGELONE.NS",
+    "name": "ANGELONE"
+  },
+  {
+    "symbol": "ANTHEM.NS",
+    "name": "ANTHEM"
+  },
+  {
+    "symbol": "ANURAS.NS",
+    "name": "ANURAS"
+  },
+  {
+    "symbol": "APARINDS.NS",
+    "name": "APARINDS"
+  },
+  {
+    "symbol": "APLAPOLLO.NS",
+    "name": "APLAPOLLO"
+  },
+  {
+    "symbol": "APOLLOHOSP.NS",
+    "name": "APOLLOHOSP"
+  },
+  {
+    "symbol": "APOLLOTYRE.NS",
+    "name": "APOLLOTYRE"
+  },
+  {
+    "symbol": "APTUS.NS",
+    "name": "APTUS"
+  },
+  {
+    "symbol": "ARE&M.NS",
+    "name": "ARE&M"
+  },
+  {
+    "symbol": "ASAHIINDIA.NS",
+    "name": "ASAHIINDIA"
+  },
+  {
+    "symbol": "ASHOKLEY.NS",
+    "name": "ASHOKLEY"
+  },
+  {
+    "symbol": "ASIANPAINT.NS",
+    "name": "Asian Paints"
+  },
+  {
+    "symbol": "ASTERDM.NS",
+    "name": "ASTERDM"
+  },
+  {
+    "symbol": "ASTRAL.NS",
+    "name": "ASTRAL"
+  },
+  {
+    "symbol": "ATGL.NS",
+    "name": "ATGL"
+  },
+  {
+    "symbol": "ATHERENERG.NS",
+    "name": "ATHERENERG"
+  },
+  {
+    "symbol": "ATUL.NS",
+    "name": "ATUL"
+  },
+  {
+    "symbol": "AUBANK.NS",
+    "name": "AUBANK"
+  },
+  {
+    "symbol": "AUROPHARMA.NS",
+    "name": "AUROPHARMA"
+  },
+  {
+    "symbol": "AWL.NS",
+    "name": "AWL"
+  },
+  {
+    "symbol": "AXISBANK.NS",
+    "name": "Axis Bank"
+  },
+  {
+    "symbol": "BAJAJ-AUTO.NS",
+    "name": "BAJAJ-AUTO"
+  },
+  {
+    "symbol": "BAJAJFINSV.NS",
+    "name": "BAJAJFINSV"
+  },
+  {
+    "symbol": "BAJAJHFL.NS",
+    "name": "BAJAJHFL"
+  },
+  {
+    "symbol": "BAJAJHLDNG.NS",
+    "name": "BAJAJHLDNG"
+  },
+  {
+    "symbol": "BAJFINANCE.NS",
+    "name": "BAJFINANCE"
+  },
+  {
+    "symbol": "BALKRISIND.NS",
+    "name": "BALKRISIND"
+  },
+  {
+    "symbol": "BALRAMCHIN.NS",
+    "name": "BALRAMCHIN"
+  },
+  {
+    "symbol": "BANDHANBNK.NS",
+    "name": "BANDHANBNK"
+  },
+  {
+    "symbol": "BANKBARODA.NS",
+    "name": "BANKBARODA"
+  },
+  {
+    "symbol": "BANKINDIA.NS",
+    "name": "BANKINDIA"
+  },
+  {
+    "symbol": "BATAINDIA.NS",
+    "name": "BATAINDIA"
+  },
+  {
+    "symbol": "BAYERCROP.NS",
+    "name": "BAYERCROP"
+  },
+  {
+    "symbol": "BBTC.NS",
+    "name": "BBTC"
+  },
+  {
+    "symbol": "BDL.NS",
+    "name": "BDL"
+  },
+  {
+    "symbol": "BEL.NS",
+    "name": "BEL"
+  },
+  {
+    "symbol": "BELRISE.NS",
+    "name": "BELRISE"
+  },
+  {
+    "symbol": "BEML.NS",
+    "name": "BEML"
+  },
+  {
+    "symbol": "BERGEPAINT.NS",
+    "name": "BERGEPAINT"
+  },
+  {
+    "symbol": "BHARATFORG.NS",
+    "name": "BHARATFORG"
+  },
+  {
+    "symbol": "BHARTIARTL.NS",
+    "name": "Bharti Airtel"
+  },
+  {
+    "symbol": "BHARTIHEXA.NS",
+    "name": "BHARTIHEXA"
+  },
+  {
+    "symbol": "BHEL.NS",
+    "name": "BHEL"
+  },
+  {
+    "symbol": "BIKAJI.NS",
+    "name": "BIKAJI"
+  },
+  {
+    "symbol": "BIOCON.NS",
+    "name": "BIOCON"
+  },
+  {
+    "symbol": "BLS.NS",
+    "name": "BLS"
+  },
+  {
+    "symbol": "BLUEDART.NS",
+    "name": "BLUEDART"
+  },
+  {
+    "symbol": "BLUEJET.NS",
+    "name": "BLUEJET"
+  },
+  {
+    "symbol": "BLUESTARCO.NS",
+    "name": "BLUESTARCO"
+  },
+  {
+    "symbol": "BOSCHLTD.NS",
+    "name": "BOSCHLTD"
+  },
+  {
+    "symbol": "BPCL.NS",
+    "name": "BPCL"
+  },
+  {
+    "symbol": "BRIGADE.NS",
+    "name": "BRIGADE"
+  },
+  {
+    "symbol": "BRITANNIA.NS",
+    "name": "BRITANNIA"
+  },
+  {
+    "symbol": "BSE.NS",
+    "name": "BSE"
+  },
+  {
+    "symbol": "BSOFT.NS",
+    "name": "BSOFT"
+  },
+  {
+    "symbol": "CAMS.NS",
+    "name": "CAMS"
+  },
+  {
+    "symbol": "CANBK.NS",
+    "name": "CANBK"
+  },
+  {
+    "symbol": "CANFINHOME.NS",
+    "name": "CANFINHOME"
+  },
+  {
+    "symbol": "CANHLIFE.NS",
+    "name": "CANHLIFE"
+  },
+  {
+    "symbol": "CAPLIPOINT.NS",
+    "name": "CAPLIPOINT"
+  },
+  {
+    "symbol": "CARBORUNIV.NS",
+    "name": "CARBORUNIV"
+  },
+  {
+    "symbol": "CARTRADE.NS",
+    "name": "CARTRADE"
+  },
+  {
+    "symbol": "CASTROLIND.NS",
+    "name": "CASTROLIND"
+  },
+  {
+    "symbol": "CCL.NS",
+    "name": "CCL"
+  },
+  {
+    "symbol": "CDSL.NS",
+    "name": "CDSL"
+  },
+  {
+    "symbol": "CEATLTD.NS",
+    "name": "CEATLTD"
+  },
+  {
+    "symbol": "CEMPRO.NS",
+    "name": "CEMPRO"
+  },
+  {
+    "symbol": "CENTRALBK.NS",
+    "name": "CENTRALBK"
+  },
+  {
+    "symbol": "CESC.NS",
+    "name": "CESC"
+  },
+  {
+    "symbol": "CGCL.NS",
+    "name": "CGCL"
+  },
+  {
+    "symbol": "CGPOWER.NS",
+    "name": "CGPOWER"
+  },
+  {
+    "symbol": "CHALET.NS",
+    "name": "CHALET"
+  },
+  {
+    "symbol": "CHAMBLFERT.NS",
+    "name": "CHAMBLFERT"
+  },
+  {
+    "symbol": "CHENNPETRO.NS",
+    "name": "CHENNPETRO"
+  },
+  {
+    "symbol": "CHOICEIN.NS",
+    "name": "CHOICEIN"
+  },
+  {
+    "symbol": "CHOLAFIN.NS",
+    "name": "CHOLAFIN"
+  },
+  {
+    "symbol": "CHOLAHLDNG.NS",
+    "name": "CHOLAHLDNG"
+  },
+  {
+    "symbol": "CIEINDIA.NS",
+    "name": "CIEINDIA"
+  },
+  {
+    "symbol": "CIPLA.NS",
+    "name": "CIPLA"
+  },
+  {
+    "symbol": "CLEAN.NS",
+    "name": "CLEAN"
+  },
+  {
+    "symbol": "COALINDIA.NS",
+    "name": "COALINDIA"
+  },
+  {
+    "symbol": "COCHINSHIP.NS",
+    "name": "COCHINSHIP"
+  },
+  {
+    "symbol": "COFORGE.NS",
+    "name": "COFORGE"
+  },
+  {
+    "symbol": "COHANCE.NS",
+    "name": "COHANCE"
+  },
+  {
+    "symbol": "COLPAL.NS",
+    "name": "COLPAL"
+  },
+  {
+    "symbol": "CONCOR.NS",
+    "name": "CONCOR"
+  },
+  {
+    "symbol": "CONCORDBIO.NS",
+    "name": "CONCORDBIO"
+  },
+  {
+    "symbol": "COROMANDEL.NS",
+    "name": "COROMANDEL"
+  },
+  {
+    "symbol": "CPPLUS.NS",
+    "name": "CPPLUS"
+  },
+  {
+    "symbol": "CRAFTSMAN.NS",
+    "name": "CRAFTSMAN"
+  },
+  {
+    "symbol": "CREDITACC.NS",
+    "name": "CREDITACC"
+  },
+  {
+    "symbol": "CRISIL.NS",
+    "name": "CRISIL"
+  },
+  {
+    "symbol": "CROMPTON.NS",
+    "name": "CROMPTON"
+  },
+  {
+    "symbol": "CUB.NS",
+    "name": "CUB"
+  },
+  {
+    "symbol": "CUMMINSIND.NS",
+    "name": "CUMMINSIND"
+  },
+  {
+    "symbol": "CYIENT.NS",
+    "name": "CYIENT"
+  },
+  {
+    "symbol": "DABUR.NS",
+    "name": "DABUR"
+  },
+  {
+    "symbol": "DALBHARAT.NS",
+    "name": "DALBHARAT"
+  },
+  {
+    "symbol": "DATAPATTNS.NS",
+    "name": "DATAPATTNS"
+  },
+  {
+    "symbol": "DCMSHRIRAM.NS",
+    "name": "DCMSHRIRAM"
+  },
+  {
+    "symbol": "DEEPAKFERT.NS",
+    "name": "DEEPAKFERT"
+  },
+  {
+    "symbol": "DEEPAKNTR.NS",
+    "name": "DEEPAKNTR"
+  },
+  {
+    "symbol": "DELHIVERY.NS",
+    "name": "DELHIVERY"
+  },
+  {
+    "symbol": "DEVYANI.NS",
+    "name": "DEVYANI"
+  },
+  {
+    "symbol": "DIVISLAB.NS",
+    "name": "DIVISLAB"
+  },
+  {
+    "symbol": "DIXON.NS",
+    "name": "DIXON"
+  },
+  {
+    "symbol": "DLF.NS",
+    "name": "DLF"
+  },
+  {
+    "symbol": "DMART.NS",
+    "name": "DMART"
+  },
+  {
+    "symbol": "DOMS.NS",
+    "name": "DOMS"
+  },
+  {
+    "symbol": "DRREDDY.NS",
+    "name": "DRREDDY"
+  },
+  {
+    "symbol": "ECLERX.NS",
+    "name": "ECLERX"
+  },
+  {
+    "symbol": "EICHERMOT.NS",
+    "name": "EICHERMOT"
+  },
+  {
+    "symbol": "EIDPARRY.NS",
+    "name": "EIDPARRY"
+  },
+  {
+    "symbol": "EIHOTEL.NS",
+    "name": "EIHOTEL"
+  },
+  {
+    "symbol": "ELECON.NS",
+    "name": "ELECON"
+  },
+  {
+    "symbol": "ELGIEQUIP.NS",
+    "name": "ELGIEQUIP"
+  },
+  {
+    "symbol": "EMAMILTD.NS",
+    "name": "EMAMILTD"
+  },
+  {
+    "symbol": "EMCURE.NS",
+    "name": "EMCURE"
+  },
+  {
+    "symbol": "EMMVEE.NS",
+    "name": "EMMVEE"
+  },
+  {
+    "symbol": "ENDURANCE.NS",
+    "name": "ENDURANCE"
+  },
+  {
+    "symbol": "ENGINERSIN.NS",
+    "name": "ENGINERSIN"
+  },
+  {
+    "symbol": "ENRIN.NS",
+    "name": "ENRIN"
+  },
+  {
+    "symbol": "ERIS.NS",
+    "name": "ERIS"
+  },
+  {
+    "symbol": "ESCORTS.NS",
+    "name": "ESCORTS"
+  },
+  {
+    "symbol": "ETERNAL.NS",
+    "name": "ETERNAL"
+  },
+  {
+    "symbol": "EXIDEIND.NS",
+    "name": "EXIDEIND"
+  },
+  {
+    "symbol": "FACT.NS",
+    "name": "FACT"
+  },
+  {
+    "symbol": "FEDERALBNK.NS",
+    "name": "FEDERALBNK"
+  },
+  {
+    "symbol": "FINCABLES.NS",
+    "name": "FINCABLES"
+  },
+  {
+    "symbol": "FIRSTCRY.NS",
+    "name": "FIRSTCRY"
+  },
+  {
+    "symbol": "FIVESTAR.NS",
+    "name": "FIVESTAR"
+  },
+  {
+    "symbol": "FLUOROCHEM.NS",
+    "name": "FLUOROCHEM"
+  },
+  {
+    "symbol": "FORCEMOT.NS",
+    "name": "FORCEMOT"
+  },
+  {
+    "symbol": "FORTIS.NS",
+    "name": "FORTIS"
+  },
+  {
+    "symbol": "FSL.NS",
+    "name": "FSL"
+  },
+  {
+    "symbol": "GABRIEL.NS",
+    "name": "GABRIEL"
+  },
+  {
+    "symbol": "GAIL.NS",
+    "name": "GAIL"
+  },
+  {
+    "symbol": "GALLANTT.NS",
+    "name": "GALLANTT"
+  },
+  {
+    "symbol": "GESHIP.NS",
+    "name": "GESHIP"
+  },
+  {
+    "symbol": "GICRE.NS",
+    "name": "GICRE"
+  },
+  {
+    "symbol": "GILLETTE.NS",
+    "name": "GILLETTE"
+  },
+  {
+    "symbol": "GLAND.NS",
+    "name": "GLAND"
+  },
+  {
+    "symbol": "GLAXO.NS",
+    "name": "GLAXO"
+  },
+  {
+    "symbol": "GLENMARK.NS",
+    "name": "GLENMARK"
+  },
+  {
+    "symbol": "GMDCLTD.NS",
+    "name": "GMDCLTD"
+  },
+  {
+    "symbol": "GMRAIRPORT.NS",
+    "name": "GMRAIRPORT"
+  },
+  {
+    "symbol": "GODFRYPHLP.NS",
+    "name": "GODFRYPHLP"
+  },
+  {
+    "symbol": "GODIGIT.NS",
+    "name": "GODIGIT"
+  },
+  {
+    "symbol": "GODREJCP.NS",
+    "name": "GODREJCP"
+  },
+  {
+    "symbol": "GODREJIND.NS",
+    "name": "GODREJIND"
+  },
+  {
+    "symbol": "GODREJPROP.NS",
+    "name": "GODREJPROP"
+  },
+  {
+    "symbol": "GPIL.NS",
+    "name": "GPIL"
+  },
+  {
+    "symbol": "GRANULES.NS",
+    "name": "GRANULES"
+  },
+  {
+    "symbol": "GRAPHITE.NS",
+    "name": "GRAPHITE"
+  },
+  {
+    "symbol": "GRASIM.NS",
+    "name": "GRASIM"
+  },
+  {
+    "symbol": "GRAVITA.NS",
+    "name": "GRAVITA"
+  },
+  {
+    "symbol": "GROWW.NS",
+    "name": "GROWW"
+  },
+  {
+    "symbol": "GRSE.NS",
+    "name": "GRSE"
+  },
+  {
+    "symbol": "GVT&D.NS",
+    "name": "GVT&D"
+  },
+  {
+    "symbol": "HAL.NS",
+    "name": "HAL"
+  },
+  {
+    "symbol": "HAVELLS.NS",
+    "name": "HAVELLS"
+  },
+  {
+    "symbol": "HBLENGINE.NS",
+    "name": "HBLENGINE"
+  },
+  {
+    "symbol": "HCLTECH.NS",
+    "name": "HCLTECH"
+  },
+  {
+    "symbol": "HDBFS.NS",
+    "name": "HDBFS"
+  },
+  {
+    "symbol": "HDFCAMC.NS",
+    "name": "HDFCAMC"
+  },
+  {
+    "symbol": "HDFCBANK.NS",
+    "name": "HDFC Bank"
+  },
+  {
+    "symbol": "HDFCLIFE.NS",
+    "name": "HDFCLIFE"
+  },
+  {
+    "symbol": "HEG.NS",
+    "name": "HEG"
+  },
+  {
+    "symbol": "HEROMOTOCO.NS",
+    "name": "HEROMOTOCO"
+  },
+  {
+    "symbol": "HEXT.NS",
+    "name": "HEXT"
+  },
+  {
+    "symbol": "HFCL.NS",
+    "name": "HFCL"
+  },
+  {
+    "symbol": "HINDALCO.NS",
+    "name": "HINDALCO"
+  },
+  {
+    "symbol": "HINDCOPPER.NS",
+    "name": "HINDCOPPER"
+  },
+  {
+    "symbol": "HINDPETRO.NS",
+    "name": "HINDPETRO"
+  },
+  {
+    "symbol": "HINDUNILVR.NS",
+    "name": "HINDUNILVR"
+  },
+  {
+    "symbol": "HINDZINC.NS",
+    "name": "HINDZINC"
+  },
+  {
+    "symbol": "HOMEFIRST.NS",
+    "name": "HOMEFIRST"
+  },
+  {
+    "symbol": "HONASA.NS",
+    "name": "HONASA"
+  },
+  {
+    "symbol": "HONAUT.NS",
+    "name": "HONAUT"
+  },
+  {
+    "symbol": "HSCL.NS",
+    "name": "HSCL"
+  },
+  {
+    "symbol": "HUDCO.NS",
+    "name": "HUDCO"
+  },
+  {
+    "symbol": "HYUNDAI.NS",
+    "name": "HYUNDAI"
+  },
+  {
+    "symbol": "ICICIAMC.NS",
+    "name": "ICICIAMC"
+  },
+  {
+    "symbol": "ICICIBANK.NS",
+    "name": "ICICI Bank"
+  },
+  {
+    "symbol": "ICICIGI.NS",
+    "name": "ICICIGI"
+  },
+  {
+    "symbol": "ICICIPRULI.NS",
+    "name": "ICICIPRULI"
+  },
+  {
+    "symbol": "IDBI.NS",
+    "name": "IDBI"
+  },
+  {
+    "symbol": "IDEA.NS",
+    "name": "IDEA"
+  },
+  {
+    "symbol": "IDFCFIRSTB.NS",
+    "name": "IDFCFIRSTB"
+  },
+  {
+    "symbol": "IEX.NS",
+    "name": "IEX"
+  },
+  {
+    "symbol": "IFCI.NS",
+    "name": "IFCI"
+  },
+  {
+    "symbol": "IGIL.NS",
+    "name": "IGIL"
+  },
+  {
+    "symbol": "IGL.NS",
+    "name": "IGL"
+  },
+  {
+    "symbol": "IIFL.NS",
+    "name": "IIFL"
+  },
+  {
+    "symbol": "IKS.NS",
+    "name": "IKS"
+  },
+  {
+    "symbol": "INDGN.NS",
+    "name": "INDGN"
+  },
+  {
+    "symbol": "INDHOTEL.NS",
+    "name": "INDHOTEL"
+  },
+  {
+    "symbol": "INDIACEM.NS",
+    "name": "INDIACEM"
+  },
+  {
+    "symbol": "INDIAMART.NS",
+    "name": "INDIAMART"
+  },
+  {
+    "symbol": "INDIANB.NS",
+    "name": "INDIANB"
+  },
+  {
+    "symbol": "INDIGO.NS",
+    "name": "INDIGO"
+  },
+  {
+    "symbol": "INDUSINDBK.NS",
+    "name": "IndusInd Bank"
+  },
+  {
+    "symbol": "INDUSTOWER.NS",
+    "name": "INDUSTOWER"
+  },
+  {
+    "symbol": "INFY.NS",
+    "name": "Infosys"
+  },
+  {
+    "symbol": "INOXWIND.NS",
+    "name": "INOXWIND"
+  },
+  {
+    "symbol": "INTELLECT.NS",
+    "name": "INTELLECT"
+  },
+  {
+    "symbol": "IOB.NS",
+    "name": "IOB"
+  },
+  {
+    "symbol": "IOC.NS",
+    "name": "IOC"
+  },
+  {
+    "symbol": "IPCALAB.NS",
+    "name": "IPCALAB"
+  },
+  {
+    "symbol": "IRB.NS",
+    "name": "IRB"
+  },
+  {
+    "symbol": "IRCON.NS",
+    "name": "IRCON"
+  },
+  {
+    "symbol": "IRCTC.NS",
+    "name": "IRCTC"
+  },
+  {
+    "symbol": "IREDA.NS",
+    "name": "IREDA"
+  },
+  {
+    "symbol": "IRFC.NS",
+    "name": "IRFC"
+  },
+  {
+    "symbol": "ITC.NS",
+    "name": "ITC"
+  },
+  {
+    "symbol": "ITCHOTELS.NS",
+    "name": "ITCHOTELS"
+  },
+  {
+    "symbol": "ITI.NS",
+    "name": "ITI"
+  },
+  {
+    "symbol": "J&KBANK.NS",
+    "name": "J&KBANK"
+  },
+  {
+    "symbol": "JAINREC.NS",
+    "name": "JAINREC"
+  },
+  {
+    "symbol": "JBCHEPHARM.NS",
+    "name": "JBCHEPHARM"
+  },
+  {
+    "symbol": "JBMA.NS",
+    "name": "JBMA"
+  },
+  {
+    "symbol": "JINDALSAW.NS",
+    "name": "JINDALSAW"
+  },
+  {
+    "symbol": "JINDALSTEL.NS",
+    "name": "JINDALSTEL"
+  },
+  {
+    "symbol": "JIOFIN.NS",
+    "name": "JIOFIN"
+  },
+  {
+    "symbol": "JKCEMENT.NS",
+    "name": "JKCEMENT"
+  },
+  {
+    "symbol": "JKTYRE.NS",
+    "name": "JKTYRE"
+  },
+  {
+    "symbol": "JMFINANCIL.NS",
+    "name": "JMFINANCIL"
+  },
+  {
+    "symbol": "JPPOWER.NS",
+    "name": "JPPOWER"
+  },
+  {
+    "symbol": "JSL.NS",
+    "name": "JSL"
+  },
+  {
+    "symbol": "JSWCEMENT.NS",
+    "name": "JSWCEMENT"
+  },
+  {
+    "symbol": "JSWDULUX.NS",
+    "name": "JSWDULUX"
+  },
+  {
+    "symbol": "JSWENERGY.NS",
+    "name": "JSWENERGY"
+  },
+  {
+    "symbol": "JSWINFRA.NS",
+    "name": "JSWINFRA"
+  },
+  {
+    "symbol": "JSWSTEEL.NS",
+    "name": "JSWSTEEL"
+  },
+  {
+    "symbol": "JUBLFOOD.NS",
+    "name": "JUBLFOOD"
+  },
+  {
+    "symbol": "JUBLINGREA.NS",
+    "name": "JUBLINGREA"
+  },
+  {
+    "symbol": "JUBLPHARMA.NS",
+    "name": "JUBLPHARMA"
+  },
+  {
+    "symbol": "JWL.NS",
+    "name": "JWL"
+  },
+  {
+    "symbol": "JYOTICNC.NS",
+    "name": "JYOTICNC"
+  },
+  {
+    "symbol": "KAJARIACER.NS",
+    "name": "KAJARIACER"
+  },
+  {
+    "symbol": "KALYANKJIL.NS",
+    "name": "KALYANKJIL"
+  },
+  {
+    "symbol": "KARURVYSYA.NS",
+    "name": "KARURVYSYA"
+  },
+  {
+    "symbol": "KAYNES.NS",
+    "name": "KAYNES"
+  },
+  {
+    "symbol": "KEC.NS",
+    "name": "KEC"
+  },
+  {
+    "symbol": "KEI.NS",
+    "name": "KEI"
+  },
+  {
+    "symbol": "KFINTECH.NS",
+    "name": "KFINTECH"
+  },
+  {
+    "symbol": "KIMS.NS",
+    "name": "KIMS"
+  },
+  {
+    "symbol": "KIRLOSENG.NS",
+    "name": "KIRLOSENG"
+  },
+  {
+    "symbol": "KOTAKBANK.NS",
+    "name": "Kotak Mahindra Bank"
+  },
+  {
+    "symbol": "KPIL.NS",
+    "name": "KPIL"
+  },
+  {
+    "symbol": "KPITTECH.NS",
+    "name": "KPITTECH"
+  },
+  {
+    "symbol": "KPRMILL.NS",
+    "name": "KPRMILL"
+  },
+  {
+    "symbol": "LALPATHLAB.NS",
+    "name": "LALPATHLAB"
+  },
+  {
+    "symbol": "LATENTVIEW.NS",
+    "name": "LATENTVIEW"
+  },
+  {
+    "symbol": "LAURUSLABS.NS",
+    "name": "LAURUSLABS"
+  },
+  {
+    "symbol": "LEMONTREE.NS",
+    "name": "LEMONTREE"
+  },
+  {
+    "symbol": "LENSKART.NS",
+    "name": "LENSKART"
+  },
+  {
+    "symbol": "LGEINDIA.NS",
+    "name": "LGEINDIA"
+  },
+  {
+    "symbol": "LICHSGFIN.NS",
+    "name": "LICHSGFIN"
+  },
+  {
+    "symbol": "LICI.NS",
+    "name": "LICI"
+  },
+  {
+    "symbol": "LINDEINDIA.NS",
+    "name": "LINDEINDIA"
+  },
+  {
+    "symbol": "LLOYDSME.NS",
+    "name": "LLOYDSME"
+  },
+  {
+    "symbol": "LODHA.NS",
+    "name": "LODHA"
+  },
+  {
+    "symbol": "LT.NS",
+    "name": "LT"
+  },
+  {
+    "symbol": "LTF.NS",
+    "name": "LTF"
+  },
+  {
+    "symbol": "LTFOODS.NS",
+    "name": "LTFOODS"
+  },
+  {
+    "symbol": "LTM.NS",
+    "name": "LTM"
+  },
+  {
+    "symbol": "LTTS.NS",
+    "name": "LTTS"
+  },
+  {
+    "symbol": "LUPIN.NS",
+    "name": "LUPIN"
+  },
+  {
+    "symbol": "M&M.NS",
+    "name": "M&M"
+  },
+  {
+    "symbol": "M&MFIN.NS",
+    "name": "M&MFIN"
+  },
+  {
+    "symbol": "MAHABANK.NS",
+    "name": "MAHABANK"
+  },
+  {
+    "symbol": "MANAPPURAM.NS",
+    "name": "MANAPPURAM"
+  },
+  {
+    "symbol": "MANKIND.NS",
+    "name": "MANKIND"
+  },
+  {
+    "symbol": "MAPMYINDIA.NS",
+    "name": "MAPMYINDIA"
+  },
+  {
+    "symbol": "MARICO.NS",
+    "name": "MARICO"
+  },
+  {
+    "symbol": "MARUTI.NS",
+    "name": "Maruti Suzuki"
+  },
+  {
+    "symbol": "MAXHEALTH.NS",
+    "name": "MAXHEALTH"
+  },
+  {
+    "symbol": "MAZDOCK.NS",
+    "name": "MAZDOCK"
+  },
+  {
+    "symbol": "MCX.NS",
+    "name": "MCX"
+  },
+  {
+    "symbol": "MEDANTA.NS",
+    "name": "MEDANTA"
+  },
+  {
+    "symbol": "MEESHO.NS",
+    "name": "MEESHO"
+  },
+  {
+    "symbol": "MFSL.NS",
+    "name": "MFSL"
+  },
+  {
+    "symbol": "MGL.NS",
+    "name": "MGL"
+  },
+  {
+    "symbol": "MINDACORP.NS",
+    "name": "MINDACORP"
+  },
+  {
+    "symbol": "MMTC.NS",
+    "name": "MMTC"
+  },
+  {
+    "symbol": "MOTHERSON.NS",
+    "name": "MOTHERSON"
+  },
+  {
+    "symbol": "MOTILALOFS.NS",
+    "name": "MOTILALOFS"
+  },
+  {
+    "symbol": "MPHASIS.NS",
+    "name": "MPHASIS"
+  },
+  {
+    "symbol": "MRF.NS",
+    "name": "MRF"
+  },
+  {
+    "symbol": "MRPL.NS",
+    "name": "MRPL"
+  },
+  {
+    "symbol": "MSUMI.NS",
+    "name": "MSUMI"
+  },
+  {
+    "symbol": "MUTHOOTFIN.NS",
+    "name": "MUTHOOTFIN"
+  },
+  {
+    "symbol": "NAM-INDIA.NS",
+    "name": "NAM-INDIA"
+  },
+  {
+    "symbol": "NATCOPHARM.NS",
+    "name": "NATCOPHARM"
+  },
+  {
+    "symbol": "NATIONALUM.NS",
+    "name": "NATIONALUM"
+  },
+  {
+    "symbol": "NAUKRI.NS",
+    "name": "NAUKRI"
+  },
+  {
+    "symbol": "NAVA.NS",
+    "name": "NAVA"
+  },
+  {
+    "symbol": "NAVINFLUOR.NS",
+    "name": "NAVINFLUOR"
+  },
+  {
+    "symbol": "NBCC.NS",
+    "name": "NBCC"
+  },
+  {
+    "symbol": "NCC.NS",
+    "name": "NCC"
+  },
+  {
+    "symbol": "NESTLEIND.NS",
+    "name": "NESTLEIND"
+  },
+  {
+    "symbol": "NETWEB.NS",
+    "name": "NETWEB"
+  },
+  {
+    "symbol": "NEULANDLAB.NS",
+    "name": "NEULANDLAB"
+  },
+  {
+    "symbol": "NEWGEN.NS",
+    "name": "NEWGEN"
+  },
+  {
+    "symbol": "NH.NS",
+    "name": "NH"
+  },
+  {
+    "symbol": "NHPC.NS",
+    "name": "NHPC"
+  },
+  {
+    "symbol": "NIACL.NS",
+    "name": "NIACL"
+  },
+  {
+    "symbol": "NIVABUPA.NS",
+    "name": "NIVABUPA"
+  },
+  {
+    "symbol": "NLCINDIA.NS",
+    "name": "NLCINDIA"
+  },
+  {
+    "symbol": "NMDC.NS",
+    "name": "NMDC"
+  },
+  {
+    "symbol": "NSLNISP.NS",
+    "name": "NSLNISP"
+  },
+  {
+    "symbol": "NTPC.NS",
+    "name": "NTPC"
+  },
+  {
+    "symbol": "NTPCGREEN.NS",
+    "name": "NTPCGREEN"
+  },
+  {
+    "symbol": "NUVAMA.NS",
+    "name": "NUVAMA"
+  },
+  {
+    "symbol": "NUVOCO.NS",
+    "name": "NUVOCO"
+  },
+  {
+    "symbol": "NYKAA.NS",
+    "name": "NYKAA"
+  },
+  {
+    "symbol": "OBEROIRLTY.NS",
+    "name": "OBEROIRLTY"
+  },
+  {
+    "symbol": "OFSS.NS",
+    "name": "OFSS"
+  },
+  {
+    "symbol": "OIL.NS",
+    "name": "OIL"
+  },
+  {
+    "symbol": "OLAELEC.NS",
+    "name": "OLAELEC"
+  },
+  {
+    "symbol": "OLECTRA.NS",
+    "name": "OLECTRA"
+  },
+  {
+    "symbol": "ONESOURCE.NS",
+    "name": "ONESOURCE"
+  },
+  {
+    "symbol": "ONGC.NS",
+    "name": "ONGC"
+  },
+  {
+    "symbol": "PAGEIND.NS",
+    "name": "PAGEIND"
+  },
+  {
+    "symbol": "PARADEEP.NS",
+    "name": "PARADEEP"
+  },
+  {
+    "symbol": "PATANJALI.NS",
+    "name": "PATANJALI"
+  },
+  {
+    "symbol": "PAYTM.NS",
+    "name": "PAYTM"
+  },
+  {
+    "symbol": "PCBL.NS",
+    "name": "PCBL"
+  },
+  {
+    "symbol": "PERSISTENT.NS",
+    "name": "PERSISTENT"
+  },
+  {
+    "symbol": "PETRONET.NS",
+    "name": "PETRONET"
+  },
+  {
+    "symbol": "PFC.NS",
+    "name": "PFC"
+  },
+  {
+    "symbol": "PFIZER.NS",
+    "name": "PFIZER"
+  },
+  {
+    "symbol": "PGEL.NS",
+    "name": "PGEL"
+  },
+  {
+    "symbol": "PHOENIXLTD.NS",
+    "name": "PHOENIXLTD"
+  },
+  {
+    "symbol": "PIDILITIND.NS",
+    "name": "PIDILITIND"
+  },
+  {
+    "symbol": "PIIND.NS",
+    "name": "PIIND"
+  },
+  {
+    "symbol": "PINELABS.NS",
+    "name": "PINELABS"
+  },
+  {
+    "symbol": "PIRAMALFIN.NS",
+    "name": "PIRAMALFIN"
+  },
+  {
+    "symbol": "PNB.NS",
+    "name": "PNB"
+  },
+  {
+    "symbol": "PNBHOUSING.NS",
+    "name": "PNBHOUSING"
+  },
+  {
+    "symbol": "POLICYBZR.NS",
+    "name": "POLICYBZR"
+  },
+  {
+    "symbol": "POLYCAB.NS",
+    "name": "POLYCAB"
+  },
+  {
+    "symbol": "POLYMED.NS",
+    "name": "POLYMED"
+  },
+  {
+    "symbol": "POONAWALLA.NS",
+    "name": "POONAWALLA"
+  },
+  {
+    "symbol": "POWERGRID.NS",
+    "name": "Power Grid"
+  },
+  {
+    "symbol": "POWERINDIA.NS",
+    "name": "POWERINDIA"
+  },
+  {
+    "symbol": "PPLPHARMA.NS",
+    "name": "PPLPHARMA"
+  },
+  {
+    "symbol": "PREMIERENE.NS",
+    "name": "PREMIERENE"
+  },
+  {
+    "symbol": "PRESTIGE.NS",
+    "name": "PRESTIGE"
+  },
+  {
+    "symbol": "PTCIL.NS",
+    "name": "PTCIL"
+  },
+  {
+    "symbol": "PVRINOX.NS",
+    "name": "PVRINOX"
+  },
+  {
+    "symbol": "PWL.NS",
+    "name": "PWL"
+  },
+  {
+    "symbol": "RADICO.NS",
+    "name": "RADICO"
+  },
+  {
+    "symbol": "RAILTEL.NS",
+    "name": "RAILTEL"
+  },
+  {
+    "symbol": "RAINBOW.NS",
+    "name": "RAINBOW"
+  },
+  {
+    "symbol": "RAMCOCEM.NS",
+    "name": "RAMCOCEM"
+  },
+  {
+    "symbol": "RBLBANK.NS",
+    "name": "RBLBANK"
+  },
+  {
+    "symbol": "RECLTD.NS",
+    "name": "RECLTD"
+  },
+  {
+    "symbol": "REDINGTON.NS",
+    "name": "REDINGTON"
+  },
+  {
+    "symbol": "RELIANCE.NS",
+    "name": "Reliance Industries"
+  },
+  {
+    "symbol": "RHIM.NS",
+    "name": "RHIM"
+  },
+  {
+    "symbol": "RITES.NS",
+    "name": "RITES"
+  },
+  {
+    "symbol": "RKFORGE.NS",
+    "name": "RKFORGE"
+  },
+  {
+    "symbol": "RPOWER.NS",
+    "name": "RPOWER"
+  },
+  {
+    "symbol": "RRKABEL.NS",
+    "name": "RRKABEL"
+  },
+  {
+    "symbol": "RVNL.NS",
+    "name": "RVNL"
+  },
+  {
+    "symbol": "SAGILITY.NS",
+    "name": "SAGILITY"
+  },
+  {
+    "symbol": "SAIL.NS",
+    "name": "SAIL"
+  },
+  {
+    "symbol": "SAILIFE.NS",
+    "name": "SAILIFE"
+  },
+  {
+    "symbol": "SAMMAANCAP.NS",
+    "name": "SAMMAANCAP"
+  },
+  {
+    "symbol": "SAPPHIRE.NS",
+    "name": "SAPPHIRE"
+  },
+  {
+    "symbol": "SARDAEN.NS",
+    "name": "SARDAEN"
+  },
+  {
+    "symbol": "SAREGAMA.NS",
+    "name": "SAREGAMA"
+  },
+  {
+    "symbol": "SBFC.NS",
+    "name": "SBFC"
+  },
+  {
+    "symbol": "SBICARD.NS",
+    "name": "SBICARD"
+  },
+  {
+    "symbol": "SBILIFE.NS",
+    "name": "SBILIFE"
+  },
+  {
+    "symbol": "SBIN.NS",
+    "name": "State Bank of India"
+  },
+  {
+    "symbol": "SCHAEFFLER.NS",
+    "name": "SCHAEFFLER"
+  },
+  {
+    "symbol": "SCHNEIDER.NS",
+    "name": "SCHNEIDER"
+  },
+  {
+    "symbol": "SCI.NS",
+    "name": "SCI"
+  },
+  {
+    "symbol": "SHREECEM.NS",
+    "name": "SHREECEM"
+  },
+  {
+    "symbol": "SHRIRAMFIN.NS",
+    "name": "SHRIRAMFIN"
+  },
+  {
+    "symbol": "SHYAMMETL.NS",
+    "name": "SHYAMMETL"
+  },
+  {
+    "symbol": "SIEMENS.NS",
+    "name": "SIEMENS"
+  },
+  {
+    "symbol": "SIGNATURE.NS",
+    "name": "SIGNATURE"
+  },
+  {
+    "symbol": "SJVN.NS",
+    "name": "SJVN"
+  },
+  {
+    "symbol": "SOBHA.NS",
+    "name": "SOBHA"
+  },
+  {
+    "symbol": "SOLARINDS.NS",
+    "name": "SOLARINDS"
+  },
+  {
+    "symbol": "SONACOMS.NS",
+    "name": "SONACOMS"
+  },
+  {
+    "symbol": "SONATSOFTW.NS",
+    "name": "SONATSOFTW"
+  },
+  {
+    "symbol": "SPLPETRO.NS",
+    "name": "SPLPETRO"
+  },
+  {
+    "symbol": "SRF.NS",
+    "name": "SRF"
+  },
+  {
+    "symbol": "STARHEALTH.NS",
+    "name": "STARHEALTH"
+  },
+  {
+    "symbol": "SUMICHEM.NS",
+    "name": "SUMICHEM"
+  },
+  {
+    "symbol": "SUNDARMFIN.NS",
+    "name": "SUNDARMFIN"
+  },
+  {
+    "symbol": "SUNPHARMA.NS",
+    "name": "Sun Pharmaceutical"
+  },
+  {
+    "symbol": "SUNTV.NS",
+    "name": "SUNTV"
+  },
+  {
+    "symbol": "SUPREMEIND.NS",
+    "name": "SUPREMEIND"
+  },
+  {
+    "symbol": "SUZLON.NS",
+    "name": "SUZLON"
+  },
+  {
+    "symbol": "SWANCORP.NS",
+    "name": "SWANCORP"
+  },
+  {
+    "symbol": "SWIGGY.NS",
+    "name": "SWIGGY"
+  },
+  {
+    "symbol": "SYNGENE.NS",
+    "name": "SYNGENE"
+  },
+  {
+    "symbol": "SYRMA.NS",
+    "name": "SYRMA"
+  },
+  {
+    "symbol": "TARIL.NS",
+    "name": "TARIL"
+  },
+  {
+    "symbol": "TATACAP.NS",
+    "name": "TATACAP"
+  },
+  {
+    "symbol": "TATACHEM.NS",
+    "name": "TATACHEM"
+  },
+  {
+    "symbol": "TATACOMM.NS",
+    "name": "TATACOMM"
+  },
+  {
+    "symbol": "TATACONSUM.NS",
+    "name": "TATACONSUM"
+  },
+  {
+    "symbol": "TATAELXSI.NS",
+    "name": "TATAELXSI"
+  },
+  {
+    "symbol": "TATAINVEST.NS",
+    "name": "TATAINVEST"
+  },
+  {
+    "symbol": "TATAPOWER.NS",
+    "name": "TATAPOWER"
+  },
+  {
+    "symbol": "TATASTEEL.NS",
+    "name": "TATASTEEL"
+  },
+  {
+    "symbol": "TATATECH.NS",
+    "name": "TATATECH"
+  },
+  {
+    "symbol": "TBOTEK.NS",
+    "name": "TBOTEK"
+  },
+  {
+    "symbol": "TCS.NS",
+    "name": "Tata Consultancy Services"
+  },
+  {
+    "symbol": "TECHM.NS",
+    "name": "TECHM"
+  },
+  {
+    "symbol": "TECHNOE.NS",
+    "name": "TECHNOE"
+  },
+  {
+    "symbol": "TEGA.NS",
+    "name": "TEGA"
+  },
+  {
+    "symbol": "TEJASNET.NS",
+    "name": "TEJASNET"
+  },
+  {
+    "symbol": "TENNIND.NS",
+    "name": "TENNIND"
+  },
+  {
+    "symbol": "THELEELA.NS",
+    "name": "THELEELA"
+  },
+  {
+    "symbol": "THERMAX.NS",
+    "name": "THERMAX"
+  },
+  {
+    "symbol": "TIINDIA.NS",
+    "name": "TIINDIA"
+  },
+  {
+    "symbol": "TIMKEN.NS",
+    "name": "TIMKEN"
+  },
+  {
+    "symbol": "TITAGARH.NS",
+    "name": "TITAGARH"
+  },
+  {
+    "symbol": "TITAN.NS",
+    "name": "TITAN"
+  },
+  {
+    "symbol": "TMCV.NS",
+    "name": "TMCV"
+  },
+  {
+    "symbol": "TMPV.NS",
+    "name": "TMPV"
+  },
+  {
+    "symbol": "TORNTPHARM.NS",
+    "name": "TORNTPHARM"
+  },
+  {
+    "symbol": "TORNTPOWER.NS",
+    "name": "TORNTPOWER"
+  },
+  {
+    "symbol": "TRAVELFOOD.NS",
+    "name": "TRAVELFOOD"
+  },
+  {
+    "symbol": "TRENT.NS",
+    "name": "TRENT"
+  },
+  {
+    "symbol": "TRIDENT.NS",
+    "name": "TRIDENT"
+  },
+  {
+    "symbol": "TRITURBINE.NS",
+    "name": "TRITURBINE"
+  },
+  {
+    "symbol": "TTML.NS",
+    "name": "TTML"
+  },
+  {
+    "symbol": "TVSMOTOR.NS",
+    "name": "TVSMOTOR"
+  },
+  {
+    "symbol": "UBL.NS",
+    "name": "UBL"
+  },
+  {
+    "symbol": "UCOBANK.NS",
+    "name": "UCOBANK"
+  },
+  {
+    "symbol": "ULTRACEMCO.NS",
+    "name": "UltraTech Cement"
+  },
+  {
+    "symbol": "UNIONBANK.NS",
+    "name": "UNIONBANK"
+  },
+  {
+    "symbol": "UNITDSPR.NS",
+    "name": "UNITDSPR"
+  },
+  {
+    "symbol": "UNOMINDA.NS",
+    "name": "UNOMINDA"
+  },
+  {
+    "symbol": "UPL.NS",
+    "name": "UPL"
+  },
+  {
+    "symbol": "URBANCO.NS",
+    "name": "URBANCO"
+  },
+  {
+    "symbol": "USHAMART.NS",
+    "name": "USHAMART"
+  },
+  {
+    "symbol": "UTIAMC.NS",
+    "name": "UTIAMC"
+  },
+  {
+    "symbol": "VBL.NS",
+    "name": "VBL"
+  },
+  {
+    "symbol": "VEDL.NS",
+    "name": "VEDL"
+  },
+  {
+    "symbol": "VIJAYA.NS",
+    "name": "VIJAYA"
+  },
+  {
+    "symbol": "VMM.NS",
+    "name": "VMM"
+  },
+  {
+    "symbol": "VOLTAS.NS",
+    "name": "VOLTAS"
+  },
+  {
+    "symbol": "VTL.NS",
+    "name": "VTL"
+  },
+  {
+    "symbol": "WAAREEENER.NS",
+    "name": "WAAREEENER"
+  },
+  {
+    "symbol": "WELCORP.NS",
+    "name": "WELCORP"
+  },
+  {
+    "symbol": "WELSPUNLIV.NS",
+    "name": "WELSPUNLIV"
+  },
+  {
+    "symbol": "WHIRLPOOL.NS",
+    "name": "WHIRLPOOL"
+  },
+  {
+    "symbol": "WIPRO.NS",
+    "name": "Wipro"
+  },
+  {
+    "symbol": "WOCKPHARMA.NS",
+    "name": "WOCKPHARMA"
+  },
+  {
+    "symbol": "YESBANK.NS",
+    "name": "YESBANK"
+  },
+  {
+    "symbol": "ZEEL.NS",
+    "name": "ZEEL"
+  },
+  {
+    "symbol": "ZENSARTECH.NS",
+    "name": "ZENSARTECH"
+  },
+  {
+    "symbol": "ZENTEC.NS",
+    "name": "ZENTEC"
+  },
+  {
+    "symbol": "ZFCVINDIA.NS",
+    "name": "ZFCVINDIA"
+  },
+  {
+    "symbol": "ZYDUSLIFE.NS",
+    "name": "ZYDUSLIFE"
+  },
+  {
+    "symbol": "ZYDUSWELL.NS",
+    "name": "ZYDUSWELL"
+  }
 ]

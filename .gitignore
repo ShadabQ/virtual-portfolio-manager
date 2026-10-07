@@ -1,3 +1,4 @@
+.env
 const summaryGrid = document.getElementById('summaryGrid');
 const portfolioTableBody = document.getElementById('portfolioTableBody');
 const buyForm = document.getElementById('buyForm');

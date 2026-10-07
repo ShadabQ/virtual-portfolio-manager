@@ -4,96 +4,192 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Virtual Portfolio Manager</title>
-    <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="/workspace.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <header class="topbar">
-        <div>
-          <p class="eyebrow">Paper trading</p>
-          <h1>Virtual Portfolio Manager</h1>
-        </div>
-        <button id="refreshBtn" class="primary-btn">Refresh live prices</button>
-      </header>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#overview" data-view="overview" aria-label="Portfolio home">
+          <span class="brand-mark">V</span>
+          <span>VPM<span class="brand-period">.</span></span>
+        </a>
+        <p class="nav-caption">Workspace</p>
+        <nav class="main-nav" aria-label="Main navigation">
+          <button class="nav-link is-active" type="button" data-view="overview"><span>01</span>Overview</button>
+          <button class="nav-link" type="button" data-view="watchlists"><span>02</span>Watchlists</button>
+          <button class="nav-link" type="button" data-view="rules"><span>03</span>Rules</button>
+          <button class="nav-link" type="button" data-view="portfolio"><span>04</span>Portfolio</button>
+          <button class="nav-link" type="button" data-view="activity"><span>05</span>Activity</button>
+        </nav>
+        <div class="sidebar-footer"><span class="status-dot"></span> Paper trading</div>
+      </aside>
 
-      <main class="layout">
-        <section class="summary-grid" id="summaryGrid"></section>
-
-        <section class="panel forms-panel">
-          <div class="form-card">
-            <h2>Add stock</h2>
-            <form id="buyForm">
-              <div class="field-group">
-                <label for="buySymbol">Stock</label>
-                <select id="buySymbol" name="symbol" required>
-                  <option value="">Select stock</option>
-                </select>
-              </div>
-
-              <div class="field-row">
-                <div class="field-group">
-                  <label for="buyQty">Quantity</label>
-                  <input id="buyQty" name="qty" type="number" min="1" step="1" required />
-                </div>
-                <div class="field-group">
-                  <label for="buyPrice">Buy price</label>
-                  <input id="buyPrice" name="buyPrice" type="number" min="0.01" step="0.01" required />
-                </div>
-              </div>
-
-              <button type="submit" class="primary-btn">Add to portfolio</button>
-            </form>
+      <main class="workspace-main">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Virtual Portfolio Manager</p>
+            <h1 id="pageTitle">Overview</h1>
           </div>
+          <div class="topbar-actions">
+            <button class="button button-primary" type="button" data-view="rules">Run a rule</button>
+            <button id="refreshBtn" class="button button-quiet" type="button">Refresh</button>
+          </div>
+        </header>
 
-          <div class="form-card">
-            <h2>Sell stock</h2>
-            <form id="sellForm">
-              <div class="field-group">
-                <label for="sellSymbol">Stock</label>
-                <select id="sellSymbol" name="symbol" required>
-                  <option value="">Select stock</option>
-                </select>
+        <section class="page-view" id="view-overview">
+          <div class="summary-grid" id="summaryGrid"></div>
+          <div class="overview-columns">
+            <section class="panel">
+              <div class="panel-heading">
+                <div><p class="section-kicker">Portfolio</p><h2>Open positions</h2></div>
+                <button class="text-button" type="button" data-view="portfolio">All positions</button>
               </div>
-
-              <div class="field-row">
-                <div class="field-group">
-                  <label for="sellQty">Quantity</label>
-                  <input id="sellQty" name="qty" type="number" min="1" step="1" required />
-                </div>
-                <div class="field-group">
-                  <label for="sellPrice">Sell price</label>
-                  <input id="sellPrice" name="sellPrice" type="number" min="0.01" step="0.01" required />
-                </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>Stock</th><th>Qty</th><th>LTP</th><th>P&amp;L</th></tr></thead>
+                  <tbody id="overviewHoldingsBody"></tbody>
+                </table>
               </div>
-
-              <button type="submit" class="secondary-btn">Sell position</button>
-            </form>
+            </section>
+            <section class="panel">
+              <div class="panel-heading">
+                <div><p class="section-kicker">Automation</p><h2>Recent rule runs</h2></div>
+                <button class="text-button" type="button" data-view="activity">History</button>
+              </div>
+              <div id="overviewRuns" class="run-list"></div>
+            </section>
           </div>
         </section>
 
-        <section class="panel">
-          <h2>Portfolio positions</h2>
-          <div class="table-wrap">
-            <table>
-              <thead>
-                <tr>
-                  <th>Symbol</th>
-                  <th>Company</th>
-                  <th>Qty</th>
-                  <th>Avg Buy</th>
-                  <th>LTP</th>
-                  <th>Invested</th>
-                  <th>Market Value</th>
-                  <th>P&L</th>
-                </tr>
-              </thead>
-              <tbody id="portfolioTableBody"></tbody>
-            </table>
+        <section class="page-view is-hidden" id="view-watchlists">
+          <section class="panel">
+            <div class="panel-heading">
+              <div><p class="section-kicker">Universe</p><h2>Watchlists</h2></div>
+              <button id="createWatchlistBtn" class="button button-primary" type="button">New watchlist</button>
+            </div>
+            <div class="toolbar-row">
+              <label class="compact-field" for="watchlistSelect">Selected list
+                <select id="watchlistSelect"></select>
+              </label>
+              <span id="watchlistCount" class="muted-copy"></span>
+              <button id="editWatchlistBtn" class="button button-quiet" type="button" hidden>Edit list</button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Symbol</th><th>Company</th><th>LTP</th><th>Day change</th></tr></thead>
+                <tbody id="watchlistStocksBody"></tbody>
+              </table>
+            </div>
+          </section>
+        </section>
+
+        <section class="page-view is-hidden" id="view-rules">
+          <div class="rules-layout">
+            <section class="panel rule-editor">
+              <div class="panel-heading">
+                <div><p class="section-kicker">Strategy workspace</p><h2>Python stock filter</h2></div>
+                <label class="compact-field saved-rule-field" for="savedRuleSelect">Saved rule
+                  <select id="savedRuleSelect"><option value="">New rule</option></select>
+                </label>
+              </div>
+              <div class="rule-fields">
+                <label class="compact-field" for="ruleName">Rule name
+                  <input id="ruleName" maxlength="80" placeholder="e.g. Positive momentum" />
+                </label>
+                <label class="compact-field" for="ruleWatchlist">Watchlist
+                  <select id="ruleWatchlist"></select>
+                </label>
+              </div>
+              <label class="editor-label" for="ruleCode">Python filter</label>
+                <textarea id="ruleCode" spellcheck="false" autocapitalize="off" autocomplete="off">def screen(stocks):
+          return [
+            stock["symbol"] for stock in stocks
+            if stock["dailyChangePercent"] is not None
+            and stock["dailyChangePercent"] &gt; 0
+          ]</textarea>
+                <p class="editor-hint">Define <code>screen(stocks)</code> and return matching symbols or stock rows. Each row provides <code>symbol</code>, <code>name</code>, <code>ltp</code>, <code>previousClose</code>, and <code>dailyChangePercent</code>. Imports are disabled in the browser sandbox.</p>
+              <div class="rule-fields run-options">
+                <label class="compact-field" for="investmentPerStock">INR per new position
+                  <input id="investmentPerStock" type="number" min="1" step="100" value="10000" />
+                </label>
+                <div class="rule-actions">
+                  <button id="saveRuleBtn" class="button button-quiet" type="button">Save rule</button>
+                  <button id="runRuleBtn" class="button button-primary" type="button">Run and preview</button>
+                </div>
+              </div>
+              <p id="ruleStatus" class="status-message" aria-live="polite"></p>
+            </section>
+            <section class="panel preview-panel" id="rulePreview" hidden>
+              <div class="panel-heading">
+                <div><p class="section-kicker">Review before execution</p><h2>Run preview</h2></div>
+                <button id="confirmRunBtn" class="button button-primary" type="button">Confirm paper trades</button>
+              </div>
+              <div id="previewSummary" class="preview-summary"></div>
+              <div class="table-wrap">
+                <table><thead><tr><th>Action</th><th>Symbol</th><th>Qty</th><th>Price</th><th>Value</th></tr></thead><tbody id="previewTradesBody"></tbody></table>
+              </div>
+            </section>
           </div>
         </section>
+
+        <section class="page-view is-hidden" id="view-portfolio">
+          <div class="summary-grid" id="portfolioSummaryGrid"></div>
+          <section class="panel">
+            <div class="panel-heading"><div><p class="section-kicker">Holdings</p><h2>Portfolio positions</h2></div></div>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Symbol</th><th>Company</th><th>Qty</th><th>Avg buy</th><th>LTP</th><th>Invested</th><th>Market value</th><th>P&amp;L</th></tr></thead>
+                <tbody id="portfolioTableBody"></tbody>
+              </table>
+            </div>
+          </section>
+          <details class="panel manual-trades">
+            <summary>Manual paper trade</summary>
+            <div class="manual-trade-grid">
+              <form id="buyForm" class="trade-form">
+                <h3>Buy</h3>
+                <label class="compact-field" for="buySymbol">Stock<select id="buySymbol" name="symbol" required></select></label>
+                <label class="compact-field" for="buyQty">Quantity<input id="buyQty" name="qty" type="number" min="1" step="1" required /></label>
+                <label class="compact-field" for="buyPrice">Buy price<input id="buyPrice" name="buyPrice" type="number" min="0.01" step="0.01" required /></label>
+                <button class="button button-primary" type="submit">Buy shares</button>
+                <p class="form-status" aria-live="polite"></p>
+              </form>
+              <form id="sellForm" class="trade-form">
+                <h3>Sell</h3>
+                <label class="compact-field" for="sellSymbol">Stock<select id="sellSymbol" name="symbol" required></select></label>
+                <label class="compact-field" for="sellQty">Quantity<input id="sellQty" name="qty" type="number" min="1" step="1" required /></label>
+                <label class="compact-field" for="sellPrice">Sell price<input id="sellPrice" name="sellPrice" type="number" min="0.01" step="0.01" required /></label>
+                <button class="button button-secondary" type="submit">Sell shares</button>
+                <p class="form-status" aria-live="polite"></p>
+              </form>
+            </div>
+          </details>
+        </section>
+
+        <section class="page-view is-hidden" id="view-activity">
+          <section class="panel">
+            <div class="panel-heading"><div><p class="section-kicker">Audit trail</p><h2>Rule run history</h2></div></div>
+            <div id="activityRuns" class="activity-list"></div>
+          </section>
+        </section>
+        <p id="globalStatus" class="global-status" aria-live="polite"></p>
       </main>
     </div>
 
-    <script src="/app.js" defer></script>
+    <dialog id="watchlistDialog" class="dialog">
+      <form id="watchlistForm">
+        <div class="panel-heading"><div><p class="section-kicker">Custom universe</p><h2 id="watchlistDialogTitle">New watchlist</h2></div><button id="closeWatchlistDialog" class="icon-button" type="button" aria-label="Close">×</button></div>
+        <label class="compact-field" for="customWatchlistName">Name<input id="customWatchlistName" maxlength="80" required placeholder="e.g. Core holdings" /></label>
+        <div class="picker-row">
+          <label class="compact-field" for="stockPicker">Add stock<select id="stockPicker"></select></label>
+          <button id="addWatchlistStockBtn" class="button button-quiet" type="button">Add</button>
+        </div>
+        <div id="selectedWatchlistSymbols" class="symbol-chips"></div>
+        <p id="watchlistFormStatus" class="status-message" aria-live="polite"></p>
+        <div class="dialog-actions"><button id="deleteWatchlistBtn" class="button button-danger" type="button" hidden>Delete</button><button id="cancelWatchlistBtn" class="button button-quiet" type="button">Cancel</button><button class="button button-primary" type="submit">Save watchlist</button></div>
+      </form>
+    </dialog>
+
+    <script type="module" src="/app.js"></script>
   </body>
 </html>
